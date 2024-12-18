@@ -1,33 +1,48 @@
-# Android Test Automation Framework
+# Automated App Testing
 
-## Overview
-A robust automation framework for remote Android device testing, built with Appium and Python. This framework enables automated daily testing of Android applications on remote devices connected to a Linux server.
+An automated testing framework for the Pagoda app using Appium and Python.
 
-## Key Features
-- Remote device connection and management via ADB
-- Automated daily test execution using cron jobs
-- Comprehensive test reporting and logging
-- Configurable test scenarios and device settings
-- Error handling and notification system
+## Project Structure
 
-## Technical Stack
-- Python 3.x
-- Appium
-- Android Debug Bridge (ADB)
-- Linux Server Environment
-- Jenkins/Cron for scheduling
-- HTML/XML reporting
+```
+automated-app-testing/
+├── src/                    # Source code
+│   ├── pagoda.py          # Main automation class
+│   ├── api_searcher.py    # API search functionality
+│   ├── request_replayer.py # Request replay utilities
+│   └── run_automation.py  # Main entry point
+├── assets/                # Image assets for UI recognition
+│   ├── agree.png
+│   ├── location.png
+│   └── ...
+├── config/               # Configuration files
+│   └── config.py        # Project settings
+├── data/                # Data files
+│   ├── captured_requests.json
+│   └── search_results.json
+├── logs/                # Log files
+│   └── requests.log
+├── tests/               # Test files
+├── requirements.txt     # Python dependencies
+└── WORKFLOW.md         # Workflow documentation
+```
 
-## Use Cases
-- Daily regression testing
-- Continuous integration testing
-- Remote device monitoring
-- Automated app verification
-- Performance metrics collection
+## Setup
 
-## Requirements
-- Linux server with ADB installed
-- Android device with USB debugging enabled
-- Network connectivity between server and device
-- Python 3.x environment
-- Appium server
+1. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Configure Appium server settings in `config/config.py`
+
+3. Start the Appium server
+
+## Usage
+
+Run the automation:
+```bash
+python src/run_automation.py
+```
+
+See `WORKFLOW.md` for detailed process documentation.
